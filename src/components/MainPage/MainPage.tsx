@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import {ShowPosts} from './show-post'
 import './MainPage.css';
 
 // It's main page with description of me and short descripton of this project
@@ -27,7 +28,6 @@ I created this project using Type Script and React.
 `;
 
 export const MainPage: React.FC = () => {
-  const [opinion, setOpinion] = useState<string>("");
 
   return (
     <div className="main-page">
@@ -39,18 +39,9 @@ export const MainPage: React.FC = () => {
       <div>
         {myProject}
       </div>
-      <h1>Share your opinion</h1>
-      <p></p>
+      <h1>Posts:</h1>
       <div>
-        <input
-          type="text"
-          value={opinion}
-          onChange={(e) => setOpinion(e.target.value)}
-        />
-      </div>
-      <p></p>    
-      <div>
-        {opinion}
+        <ShowPosts/>
       </div>
     </div>
   );

@@ -49,6 +49,9 @@ export const Navbar = () => {
             <li>
               <Link to="/my-diets">Show Diets</Link>
             </li>
+            <li>
+              <Link to="/create-post">Create Post</Link>
+            </li>
           </ul>
         )}
         <div className="user">

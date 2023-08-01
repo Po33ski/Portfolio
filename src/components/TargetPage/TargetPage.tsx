@@ -5,7 +5,6 @@ import { AppContext, appContextType, ICalculateCaloriesData } from '../../App';
 // dodac custom component w ktorym bedzie sprawdzane czy useReducer dostaje odpowiednie wartosci
 // zrobic to uzywajac ponizszych type
 
-
   // actions used with useReducer
   type Action =
    | { type: 'increase' }
@@ -74,13 +73,17 @@ export const CreateTargetPage: React.FC = () => {
                         lastAction = action.type; 
                         return {value : bmr, showAction : action.type};
                     }
-                  };  
+                default :
+                    {
+                      return {value : bmr, showAction : lastAction};
+                    }
+                  }
         } else 
             return {value : bmr, showAction : action.type};
     };
 
-      // I define here user function dispatch and value state using useReducer 
-      const [state, dispatch] = useReducer(reducer, {value : bmr, showAction : ""});
+  // I define here user function dispatch and value state using useReducer 
+  const [state, dispatch] = useReducer(reducer, {value : bmr, showAction : ""});
     return (
         <form>
             <header>
@@ -145,6 +148,5 @@ export const CreateTargetPage: React.FC = () => {
             </div>
         </div>
         </form>
-
     );
 };

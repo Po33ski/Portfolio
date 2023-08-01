@@ -6,6 +6,7 @@ import {CreateTargetPage} from './components/TargetPage/TargetPage';
 import {ShowDietPage } from './components/ShowDietPage/ShowDietPage';
 import {ContactPage} from './components/ContactPage/ContactPage';
 import {MyDietPage} from "./components/MyDietPage/MyDietPage";
+import {CreatePostPage} from './components/CreatePostPage/CreatePostPage';
 import {Navbar} from './components/Navbar/Navbar';
 import {Login} from "./components/Login/Login";
 import {useAuthState} from 'react-firebase-hooks/auth'; 
@@ -97,6 +98,7 @@ export const App: React.FC= () => {
               <Route path="/create-target" element={<CreateTargetPage  />} />
               <Route path="/show-diet" element={<ShowDietPage  />} />
               <Route path="/my-diets" element={<MyDietPage />} />
+              <Route path="/create-post" element={<CreatePostPage />} />
             </Routes>
           ) : (
             <Routes>

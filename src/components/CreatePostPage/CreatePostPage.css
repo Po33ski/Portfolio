@@ -1,0 +1,38 @@
+.postForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 240, 0.8);
+  }
+  
+  .formCalculator header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .formCalculator h1 {
+    font-size: 24px;
+  }
+
+  .submitForm{
+    inline-size: 150px;
+    block-size: 50px;
+    padding: 40px, 40px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .form .buttonForm {
+    padding: 20%, 20%;
+    margin-top: 10%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
