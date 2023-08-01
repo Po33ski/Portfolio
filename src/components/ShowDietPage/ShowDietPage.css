@@ -1,0 +1,179 @@
+.diet-option {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.diet-result {
+  display: block;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.show-diet-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.diet-progress {
+  width: 200px;
+  height: 20px;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: #eee;
+}
+
+.diet-result-bar {
+  width: 10%;
+  margin-bottom: 10px;
+  background-color: aqua;
+}
+
+.diet-progress-bar {
+  height: 100%;
+  margin-bottom: 10px;
+
+}
+
+.carbohydrates-bar {
+  background-color: #2196f3;
+}
+
+.proteins-bar {
+  background-color: #4caf50;
+}
+
+.fats-bar {
+  background-color: #f44336;
+}
+
+.calorie-info {
+  list-style-type: none;
+  margin-top: 100px;
+  padding: 0;
+}
+
+.calorie-info li {
+  margin-bottom: 5px;
+}
+
+.main-page {
+  padding: 20px;
+}
+
+.main-page h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.main-page p {
+  margin-bottom: 20px;
+}
+
+.main-page text {
+  white-space: pre-wrap;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.buttonForm {
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  size: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 240, 0.8); /* Ivory color with transparency */
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+label {
+  display: flex;
+  place-items: auto;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2); /* Adjust the scale value to increase or decrease the size */
+}
+
+/*
+.create-diet-container {
+  text-align: center;
+}
+
+.diet-option {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.diet-option h3 {
+  margin-top: 0;
+}
+
+.diet-progress {
+  width: 200px;
+  height: 15px;
+  margin: 10px auto;
+  background-color: #eee;
+}
+
+.diet-progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carbohydrates-bar {
+  background-color: #8bc34a;
+}
+
+.proteins-bar {
+  background-color: #2196f3;
+}
+
+.fats-bar {
+  background-color: #f44336;
+}
+
+.calorie-info {
+  margin-top: 100px;
+}
+
+.calorie-info li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+*/

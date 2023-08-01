@@ -1,0 +1,171 @@
+/* The container for the form */
+.create-diet-container {
+  background-color: ivory;
+  padding: 10px;
+  max-width: 600px; /* Increased form width */
+  margin: 0 auto;
+  margin-top: 20px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Header styles */
+.create-diet-container header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-diet-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styles for each select input */
+.create-diet-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styles for all buttons */
+.create-diet-container .submitForm{
+  width: 100%;
+  padding: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 0%;
+  margin-bottom: 5%;
+  text-align: center; /* Align button text to the center */
+}
+.create-diet-container .buttonForm {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0px;
+  margin-left: 0%;
+  text-align: center; /* Align button text to the center */
+}
+/* Styles for the "Your answers are ok" and "We can not find diet" messages */
+.create-diet-container div > div {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Styles for the "The best diets for you" heading */
+.create-diet-container h4 {
+  margin: 10px 0;
+}
+
+/* Styles for the container of "The best diets for you" */
+.create-diet-container div > div > div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Styles for the "Next" and "Back to select your Target" buttons */
+.create-diet-container .buttonForm:last-child {
+  background-color: #007bff;
+}
+
+/* Show the diets in the same size */
+.create-diet-container div > div > div > div {
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+/* Additional styles for the form container */
+.create-diet-container .create-diet-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-diet-container .create-diet-container > div {
+  margin-bottom: 10px;
+}
+/*
+.formCreateDiet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 240, 0.8);
+}
+
+
+
+.formCreateDiet .submitForm,
+.formCreateDiet .buttonForm {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formCreateDiet .submitForm:hover,
+.formCreateDiet .buttonForm:hover {
+  background-color: #0056b3;
+}
+
+.formCreateDiet h1 {
+  margin-top: 20px;
+}
+
+.buttonForm {
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  size: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 240, 0.8); 
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 1px;
+  width: 300px;
+}
+
+label {
+  display: flex;
+  place-items: auto;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+input[type="checkbox"] {
+  margin-right: 1px;
+  margin-bottom: 1px;
+  transform: scale(1.2); /* Adjust the scale value to increase or decrease the size *//*
+}
+*/

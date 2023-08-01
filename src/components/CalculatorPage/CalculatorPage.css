@@ -1,0 +1,79 @@
+.formCalculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 240, 0.8);
+}
+
+.formCalculator header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.formCalculator h1 {
+  font-size: 24px;
+}
+
+.formCalculator h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.formCalculator select,
+.formCalculator input[type="number"] {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.submitForm{
+  inline-size: 150px;
+  block-size: 50px;
+  padding: 40px, 40px;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.formCalculator .buttonForm {
+  padding: 20%, 20%;
+  margin-top: 10%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formCalculator .submitForm:hover,
+.formCalculator .buttonForm:hover {
+  background-color: #0056b3;
+}
+
+.formCalculator h1 {
+  margin-top: 20px;
+}
+
+.gender-radio-group {
+  display: flex;
+  align-items: center;
+}
+
+.gender-radio-group label {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.gender-radio-group input[type="radio"] {
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 5px;
+}
