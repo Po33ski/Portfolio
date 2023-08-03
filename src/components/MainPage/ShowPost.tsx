@@ -1,7 +1,7 @@
 import {getDocs, collection} from 'firebase/firestore';
 import {db} from '../../config/firebase';
 import {useEffect, useState} from "react";
-import { Post } from './post';
+import { Post } from "./post";
 
 // interface
 export interface Post {
@@ -10,6 +10,7 @@ export interface Post {
     id: string;
     userId: string;
     username: string;
+    uniqueId: string;
 }
 // This component shows posts with likes on the page "create post"
 export const ShowPosts = () => {
@@ -31,9 +32,12 @@ export const ShowPosts = () => {
     // it returns the all posts if it is not null
     return (
         <div> 
-            {postsList?.map((post) => (
-                <Post post={post}/>
+            {postsList?.map((post, index) => (
+                <div  key={index}>
+                    <Post post={post} setPostsList={setPostsList}/>
+                </div>
             ))}
         </div>
     );
 };
+

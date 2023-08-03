@@ -1,32 +1,54 @@
-import {auth, provider} from '../../config/firebase';
-import {signInWithPopup} from 'firebase/auth'
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
-// This component handles the log in pop up
-// On the project has been used google authentication
-export const Login = () => {
-    const navigate = useNavigate();
-    
-    const signInWithGoogle = async () => {
-        const result = await signInWithPopup(auth, provider)
-        .then(() => {console.log("logged in")})
-        .catch((error) => {
-            console.log(error);
-            navigate("/login");
-        });
-        navigate("/"); // redirection to home page (calculator)
-    };
-
-    return (
-      <div className="login-container">
-        <div className="login-card">
-          <p>Sign In with Google To Continue</p>
-          <div className="button-container">
-            <button onClick={signInWithGoogle}>Sign In With Google</button>
-          </div>
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import "./Login.css";
+function Login() {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) navigate("/dashboard");
+  }, [user, loading]);
+  return (
+    <div className="login">
+      <div className="login__container">
+        <input
+          type="text"
+          className="login__textBox"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="E-mail Address"
+        />
+        <input
+          type="password"
+          className="login__textBox"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <button
+          className="login__btn"
+          onClick={() => logInWithEmailAndPassword(email, password)}
+        >
+          Login
+        </button>
+        <button className="login__btn login__google" onClick={signInWithGoogle}>
+          Login with Google
+        </button>
+        <div>
+          <Link to="/reset">Forgot Password</Link>
         </div>
+        <div>
+          Don't have an account? <Link to="/register">Register</Link> now.
+        </div>
+      </div>
     </div>
-    );
-};
-
-
+  );
+}
+export default Login;

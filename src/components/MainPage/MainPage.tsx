@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import {ShowPosts} from './show-post'
+import {ShowPosts} from './ShowPost'
 import './MainPage.css';
 
 // It's main page with description of me and short descripton of this project

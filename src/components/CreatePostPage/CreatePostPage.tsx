@@ -10,17 +10,23 @@ import "./CreatePostPage.css";
 interface CreateFormData {
     title: string;
     description: string;
+};
+interface dataToSend {
+    title: string;
+    description: string;
+    uniqueId: string;
 }
 // CreateForm component represents the form used to create the post
 export const  CreatePostPage = () => {
     // 2 hooks from installed libraries
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    let newDate: Date = new Date();
+    let unId: string = newDate.toLocaleString();
     // yap scheme with errors handling
     const schema = yup.object().shape({
         title: yup.string().required("You must add a title."),
         description: yup.string().required("You must add a title."),
-
     });
     // use form hook. Is used to handle yup scheme
     const {register, 
@@ -34,8 +40,12 @@ export const  CreatePostPage = () => {
     // this function is needed as the argument of handleSubmit - using by useForm
     // it does add the posts to the firebase 
     const onCreatePost = async (data: CreateFormData) => {
-        await addDoc(postsRef, {
+        const dataDoc : dataToSend = {
             ...data,
+            uniqueId: unId,
+        }
+        await addDoc(postsRef, {
+            ...dataDoc,
             username: user?.displayName,
             userId: user?.uid, // id used by google
         });

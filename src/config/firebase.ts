@@ -1,10 +1,21 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider, EmailAuthProvider} from 'firebase/auth';
-import {getFirestore} from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut,
+} from "firebase/auth";
+import {
+  getFirestore,
+  query,
+  getDocs,
+  collection,
+  where,
+  addDoc,
+} from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAcB5H_UL6tG1maBnhrvJz2JCeq6gQBXAc",
@@ -15,23 +26,73 @@ const firebaseConfig = {
   appId: "1:1084373415179:web:fc60dd66d337e674621e0e"
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
 
-export const auth = getAuth(app); // get the Auth instance
-export const provider = new GoogleAuthProvider();
-//export const emailProvider = new EmailAuthProvider(); 
-export const db = getFirestore(app); // db is the firestore instance 
-
-
-/*
-const firebaseConfig = {
-  apiKey: "AIzaSyD6tAsf8UkabUGAxtFSRCG1T-rMbHhfLk0",
-  authDomain: "caloriescalculator-341ad.firebaseapp.com",
-  projectId: "caloriescalculator-341ad",
-  storageBucket: "caloriescalculator-341ad.appspot.com",
-  messagingSenderId: "978793292387",
-  appId: "1:978793292387:web:3c4a1c61e330c62ed04e56"
+const signInWithGoogle = async () => {
+  const result = await signInWithPopup(auth, googleProvider)
+  .then(() => {console.log("logged in")})
+  .catch((error) => {
+      console.log(error);
+  });
 };
+const logInWithEmailAndPassword = async (email : string, password : string) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err: any) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+const registerWithEmailAndPassword = async (name : string, email : string, password : string) => {
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(collection(db, "users"), {
+      uid: user.uid,
+      name,
+      authProvider: "local",
+      email,
+    });
+  } catch (err: any) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+const sendPasswordReset = async (email: string) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Password reset link sent!");
+  } catch (err: any) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+const logout = () => {
+  signOut(auth);
+};
+export {
+  auth,
+  db,
+  signInWithGoogle,
+  logInWithEmailAndPassword,
+  registerWithEmailAndPassword,
+  sendPasswordReset,
+  logout,
+};
+// This code represents rules used in Firebase with collection colections
+/*
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow write, update: if request.auth != null && request.auth.uid == request.resource.data.userId;
+      allow read, delete: if request.auth != null;
+    }
+  }
+}
 */
+

@@ -14,7 +14,7 @@ export const Navbar = () => {
    const navigate = useNavigate();
    // This funtion uses the other funtion sigOut from firebase
    const signUserOut = async () => {
-      navigate("/");
+      navigate("/calculator");
       await signOut(auth);
    };
   return (
@@ -24,9 +24,6 @@ export const Navbar = () => {
           <ul>
             <li>
               <Link to="/login"> Login </Link>
-            </li>
-            <li>
-              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/calculator">Calories Calulator</Link>
@@ -39,9 +36,6 @@ export const Navbar = () => {
             </li>
             <li>
               <Link to="/calculator">Calories Calulator</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
             </li>
             <li>
               <Link to="/create-diet">Create Diet</Link>

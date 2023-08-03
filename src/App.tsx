@@ -1,14 +1,16 @@
 import React, { useState, Suspense, createContext} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {MainPage} from './components/MainPage/MainPage';
+//import {MainPage} from './components/MainPage/MainPage';
 import {CalculatorPage} from './components/CalculatorPage/CalculatorPage';
 import {CreateTargetPage} from './components/TargetPage/TargetPage';
 import {ShowDietPage } from './components/ShowDietPage/ShowDietPage';
-import {ContactPage} from './components/ContactPage/ContactPage';
 import {MyDietPage} from "./components/MyDietPage/MyDietPage";
 import {CreatePostPage} from './components/CreatePostPage/CreatePostPage';
 import {Navbar} from './components/Navbar/Navbar';
-import {Login} from "./components/Login/Login";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Reset from "./components/Reset/Reset";
+import Dashboard from "./components/Dashboard/Dashboard";
 import {useAuthState} from 'react-firebase-hooks/auth'; 
 import {auth} from "./config/firebase";
 import './App.css';
@@ -16,7 +18,9 @@ import './App.css';
 
 const CreateDietPage : React.FC = React.lazy(async () => ({ 
   default: (await import('./components/CreateDietPage/CreateDietPage')).CreateDietPage }));
-
+const MainPage : React.FC = React.lazy(async () => ({ 
+  default: (await import('./components/MainPage/MainPage')).MainPage }));
+  
 export interface IDietsResultsData {
   name : string,
   result : number,
@@ -91,9 +95,7 @@ export const App: React.FC= () => {
           {user ? (
             <Routes>
               <Route path="/" element={<MainPage />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/calculator" element={<CalculatorPage />} />
-              <Route path="/contact" element={<ContactPage />} />
               <Route path="/create-diet" element={<CreateDietPage  />} />
               <Route path="/create-target" element={<CreateTargetPage  />} />
               <Route path="/show-diet" element={<ShowDietPage  />} />
@@ -102,8 +104,10 @@ export const App: React.FC= () => {
             </Routes>
           ) : (
             <Routes>
-              <Route path="/" element={<MainPage />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/reset" element={<Reset />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/calculator" element={<CalculatorPage />} />
             </Routes>
           )}
