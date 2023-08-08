@@ -1,0 +1,41 @@
+[debug] [2023-08-08T09:12:53.445Z] ----------------------------------------------------------------------
+[debug] [2023-08-08T09:12:53.449Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\popa9\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-08-08T09:12:53.449Z] CLI Version:   12.4.7
+[debug] [2023-08-08T09:12:53.449Z] Platform:      win32
+[debug] [2023-08-08T09:12:53.449Z] Node Version:  v20.5.0
+[debug] [2023-08-08T09:12:53.450Z] Time:          Tue Aug 08 2023 11:12:53 GMT+0200 (Central European Summer Time)
+[debug] [2023-08-08T09:12:53.450Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-08T09:12:53.458Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-08T09:12:53.458Z] > authorizing via signed-in user (popador994@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\popa9\OneDrive\Pulpit\MR\Programowanie\React\portfolio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-08-08T09:18:05.274Z] > refreshing access token with scopes: []
+[debug] [2023-08-08T09:18:05.276Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-08-08T09:18:05.277Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-08T09:18:16.543Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------861800470687356055812054","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo ENOTFOUND www.googleapis.com
+[debug] [2023-08-08T09:18:16.543Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-08-08T09:18:21.552Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\popa9\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+[error] 
+[error] Error: An unexpected error has occurred.
