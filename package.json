@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://po33ski.github.io/Portfolio",
+  "homepage": "https://po33ski.github.io/Portfolio/",
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
     "@testing-library/jest-dom": "^5.17.0",
