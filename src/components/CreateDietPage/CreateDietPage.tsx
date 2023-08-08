@@ -67,7 +67,7 @@ export const CreateDietPage: React.FC = () => {
     document.addEventListener("submit", () => {
       bmrContext?.handleResultDiets(getTheBestDiet);
     });
-  },[getTheBestDiet]);
+  },[valueAhp]);
 
   const showDiets = () => {
     return (

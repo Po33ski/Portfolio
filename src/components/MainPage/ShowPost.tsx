@@ -28,7 +28,7 @@ export const ShowPosts = () => {
     // The hook performs "side effects". In this case it calls the funtion getPosts again if it is necessary
     useEffect(() => {
         getPosts();
-    }, []); // create postsList every time you render the main
+    }, [postsList]); // create postsList every time you render the main
     // it returns the all posts if it is not null
     return (
         <div> 
