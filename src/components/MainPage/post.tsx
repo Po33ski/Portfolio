@@ -1,4 +1,4 @@
-import { Post as IPost} from "./ShowPost";
+import { IPost} from "./ShowPost";
 import {db, auth} from "../../config/firebase"
 import { addDoc, collection, query, where, getDocs, deleteDoc, doc, } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";

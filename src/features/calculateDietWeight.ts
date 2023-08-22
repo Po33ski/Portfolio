@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {IDietsResultsData} from '../App';
 
 // Here are algorithms that calculate the best choice using 6 criteria

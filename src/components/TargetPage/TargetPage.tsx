@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect, useContext } from 'react';
+import React, { useState, useReducer, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TargetPage.css';
 import { AppContext, appContextType, ICalculateCaloriesData } from '../../App';
@@ -21,7 +21,7 @@ export const CreateTargetPage: React.FC = () => {
 // it returns updated value and showAction values
   const [BMR, setFactorBMR] = useState<number>(0);
   const bmrContext = useContext<appContextType | null>(AppContext);
-  const [calcData, setCalcData] = useState<ICalculateCaloriesData>({
+  const calcData : ICalculateCaloriesData = ({
     gender: bmrContext?.CalculateCaloriesData.gender ?? "",
     age:  bmrContext?.CalculateCaloriesData.age ?? 18,
     weight: bmrContext?.CalculateCaloriesData.weight ?? 80,
@@ -147,6 +147,6 @@ export const CreateTargetPage: React.FC = () => {
               </ul>
             </div>
         </div>
-        </form>
+      </form>
     );
 };
